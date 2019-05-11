@@ -1,0 +1,111 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+$color-primary-light: #ddc2a2;
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+$color-heart-icon: #ff1a1a;
+$color-icon-home: #0000b3;
+$color-back-hover: #990000;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;          // 1200px: 1200/16 = 75 
+$bp-large: 62.5em;          // 1000px: 1000/16 = 62.5 
+$bp-medium-large: 56.25em;  //  900px:  900/16 = 56.25 
+$bp-medium: 50em;           //  800px:  800/16 = 50
+$bp-medium-small: 43.75em;  //  700px:  700/16 = 43.75
+$bp-small: 37.5em;	        //  600px:  600/16 = 37.5
+$bp-smaller: 31.25em;       //  500px:  500/16 = 31.25
+$bp-smallest: 25em;         //  400px:  400/16 = 25
+
+// INITIALIZE
+*,
+*::before,
+*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html
+{
+    box-sizing: border-box;
+    font-size: 62.5%;   // 10px: 10/16 = 62.5 = 1rem
+
+    // @1200px screen-width
+    @media only screen and (max-width: $bp-largest)
+    {
+        font-size: 50%;
+    }
+}
+
+body
+{
+    font-family: $font-primary;
+    font-weight: 300;
+    color: $color-grey-dark-2;
+    line-height: 1.6;
+}
+
+// Create the primary grid for the entire web page
+    /* Define the rows layout (6 rows) */
+    /* grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+    /* Define the columns layout 
+    #1)
+    -- 1 fixed-width sidebar and 8 responsive-width columns with min-widths of 14rem  
+       grid-template-columns: 8rem repeat(8, minmax(min-content, 14rem)); 
+    
+    #2)
+    -- Center the 8 responsive-width columns in the area between sidebar and end of row.
+       Add a column on each side of the center columns. This creates the framework for a 
+       layout that can have some rows centered in the viewport while others fully-extend 
+       to the entire width ("full-bleed").
+
+       grid-template-columns: 8rem 1fr repeat(8, minmax(min-content, 14rem)) 1fr; 
+       
+       Set a min-width (6rem) for the two columns framing the 
+       center columns. We end up with an 11 column/ 6-row layout
+       
+       grid-template-columns: 8rem minmax(6rem, 1fr) repeat(8, minmax(min-content, 14rem)) minmax(6rem, 1fr); 
+       
+    #3)
+    -- Name the grid-areas for ease of use throughout project 
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    */
+
+/* final initial construction */    
+.container 
+{    
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    // @1000px screen-width; change grid to move side-bar to top
+    @media only screen and (max-width: $bp-large) 
+    {
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+    // @800px screen-width; change grid to move realtors below header
+    @media only screen and (max-width: $bp-medium) 
+    {
+        grid-template-rows: 6rem calc(100vh - 6rem);
+    }
+
+    // @500px screen-width; reduce height of sections for smaller mobile devices
+    @media only screen and (max-width: $bp-smaller) 
+    {
+        grid-template-rows: 6rem min-content;          
+    }
+}

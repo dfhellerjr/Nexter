@@ -1,0 +1,51 @@
+.features
+{
+    grid-column: center-start / center-end;
+    margin: 15rem 0rem;
+    
+    /* Create a sub-grid: 3-columns x 2-rows */ 
+    display: grid;
+    // use auto-fit for responsive column widths (# of rows will be auto-generated) 
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+
+    /* 800px screnn-width */
+    @media only screen and (max-width: $bp-medium) 
+    { 
+        grid-gap: 4rem; 
+    }
+
+    /* 600px screnn-width */
+    @media only screen and (max-width: $bp-small) 
+    { 
+        margin: 10rem 0rem 7rem 0;    
+    }
+}
+
+/* Make feature class independent of features class (reusable elsewhere) */
+.feature 
+{
+    /* Create a sub-grid: 2-columns x 2-rows */
+    display: grid;
+    grid-template-columns: min-content 1fr;
+
+    // explicitly define rows to uniformly minimize vertical spacing
+    grid-template-rows: repeat(2, min-content);
+        
+    align-items: center;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2rem;
+
+    &__icon 
+    {
+        fill: $color-primary-dark;
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    &__text
+    {
+        font-size: 1.7rem;
+        grid-column: 2 / 3;
+    }
+}

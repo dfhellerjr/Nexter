@@ -1,0 +1,115 @@
+// HEADERS
+%heading
+{
+    font-style: $font-display;
+    font-weight: 400;   
+}
+
+.heading-1
+{    
+    @extend %heading;
+    font-size: 4.4rem;
+    color: $color-grey-light-1;
+    line-height: 1;
+
+    // @400px screen-width
+    @media only screen and (max-width: $bp-smallest) 
+    { 
+        font-size: 3.5rem;            
+    }
+
+    &--dark
+    {
+        color: $color-grey-dark-1;
+        font-size: 4.4rem;
+
+        // @600px screen-width
+        @media only screen and (max-width: $bp-small) 
+        { 
+            font-size: 3.5rem;            
+        }
+
+        // @400px screen-width
+        @media only screen and (max-width: $bp-smallest) 
+        { 
+            font-size: 3rem;            
+        }
+    }
+}
+
+.heading-2
+{
+    @extend %heading;
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1;
+    
+    &--light
+    {
+        color: $color-grey-light-1;
+    }
+
+    &--dark
+    {
+        color: $color-grey-dark-1;
+        font-weight: 600;   
+    }
+}
+
+.heading-3
+{    
+    @extend %heading;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-primary-dark;
+    text-transform: uppercase;
+}
+
+.heading-4
+{
+    @extend %heading; 
+    font-size: 2rem;
+    
+    &--light
+    {
+        color: $color-grey-light-1;
+    }
+
+    &--dark
+    {
+        color: $color-grey-dark-1;
+        font-weight: 600;   
+    }
+}
+
+/* BUTTONS: all properties must be defined */
+.btn
+{
+    background-color: $color-primary;
+    color: #fff;
+    border: none; 
+    border-radius: 0;
+    outline: none;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover
+    {
+        background-color: $color-primary-dark;
+        box-shadow: 0 1.5rem 4rem rgba($color-secondary, .15);
+    }   
+}
+
+/* HELPER CLASSES */ 
+// Margin bottoms
+.mb-sm { margin-bottom: 2rem; }
+.mb-md { margin-bottom: 3rem; }
+.mb-lg { margin-bottom: 4rem; }
+.mb-hg { margin-bottom: 8rem; }
+
+// Margin tops
+.mt-sm { margin-top: 1.5rem; }

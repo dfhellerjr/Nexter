@@ -1,0 +1,124 @@
+.footer
+{    
+    grid-column: full-start / full-end;
+
+    background-color: $color-secondary;
+    padding: 8rem;
+
+    // @900px screen-width
+    @media only screen and (max-width: $bp-medium-large) 
+    { 
+        padding: 4rem;
+    }
+
+    // @500px screen-width
+    @media only screen and (max-width: $bp-smaller) 
+    { 
+        padding: 2rem 2rem;  
+    }
+
+    // @400px screen-width
+    @media only screen and (max-width: $bp-smallest) 
+    { 
+        padding: 2rem 0rem;  
+    }
+}
+
+.nav 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+
+    list-style: none;
+
+    // @900px screen-width
+    @media only screen and (max-width: $bp-medium-large) 
+    { 
+        grid-gap: 1.5rem;   
+    }
+
+    // @800px screen-width
+    @media only screen and (max-width: $bp-medium) 
+    { 
+        grid-template-columns: repeat(3, minmax(14rem, 1fr));
+        grid-gap: 1.75rem;   
+    }
+
+    // @500px screen-width
+    @media only screen and (max-width: $bp-smaller) 
+    { 
+        grid-row-gap: 1.25rem;   
+    }
+
+    // @400px screen-width
+    @media only screen and (max-width: $bp-smallest) 
+    { 
+        grid-template-columns: repeat(3, minmax(12rem, 1fr)); 
+    }
+
+    &__link:link,
+    &__link:visited 
+    {
+        display: block;
+        font-family: $font-display;
+        font-size: 1.4rem;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;        
+        padding: 1.4rem;        
+        transition: all .2s;
+
+        // @500px screen-width
+        @media only screen and (max-width: $bp-smaller) 
+        { 
+            padding: 1rem;   
+        }
+
+        // @400px screen-width
+        @media only screen and (max-width: $bp-smallest) 
+        { 
+            font-size: 1.25rem;  
+        }
+
+    }
+
+    &__link:hover,
+    &__link:active 
+    {
+        background-color: rgba(#fff, .05);
+        transform: translateY(-3px);
+    }
+}
+
+.copyright 
+{
+    font-size: 1.4rem;
+    color: $color-grey-light-2;
+    text-align: center;
+    margin-top: 6rem;
+    margin-right: auto;
+    margin-left: auto;    
+    width: 70%;
+
+    // @800px screen-width
+    @media only screen and (max-width: $bp-medium) 
+    { 
+        margin-top: 2rem; 
+    }
+
+    // @500px screen-width
+    @media only screen and (max-width: $bp-smaller) 
+    { 
+        width: 90%;
+    }
+
+    // @400px screen-width
+    @media only screen and (max-width: $bp-smallest) 
+    { 
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
