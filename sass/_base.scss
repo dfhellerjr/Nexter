@@ -57,34 +57,6 @@ body
     line-height: 1.6;
 }
 
-// Create the primary grid for the entire web page
-    /* Define the rows layout (6 rows) */
-    /* grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-
-    /* Define the columns layout 
-    #1)
-    -- 1 fixed-width sidebar and 8 responsive-width columns with min-widths of 14rem  
-       grid-template-columns: 8rem repeat(8, minmax(min-content, 14rem)); 
-    
-    #2)
-    -- Center the 8 responsive-width columns in the area between sidebar and end of row.
-       Add a column on each side of the center columns. This creates the framework for a 
-       layout that can have some rows centered in the viewport while others fully-extend 
-       to the entire width ("full-bleed").
-
-       grid-template-columns: 8rem 1fr repeat(8, minmax(min-content, 14rem)) 1fr; 
-       
-       Set a min-width (6rem) for the two columns framing the 
-       center columns. We end up with an 11 column/ 6-row layout
-       
-       grid-template-columns: 8rem minmax(6rem, 1fr) repeat(8, minmax(min-content, 14rem)) minmax(6rem, 1fr); 
-       
-    #3)
-    -- Name the grid-areas for ease of use throughout project 
-    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-    */
-
-/* final initial construction */    
 .container 
 {    
     display: grid;
