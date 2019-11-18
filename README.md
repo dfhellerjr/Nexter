@@ -1,4 +1,4 @@
-# Nexter
+# Nexter Project
 
 This repo contains the files for a project that is part of the Udemy course:
 > Advanced CSS and SASS: Flexbox, Grid, Animations and More!  
